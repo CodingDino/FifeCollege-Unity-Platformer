@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
 
+    // Variable to let us save the score
+    //      Public so we can drag and drop
+    public Score scoreObject;
 
     // Designer variables
     public string sceneToLoad;
@@ -26,6 +29,9 @@ public class Door : MonoBehaviour {
         if (playerScript != null)
         {
             // We DID hit the player!
+
+            // Save the score using our score object reference
+            scoreObject.SaveScore();
 
             // Load the next level
             SceneManager.LoadScene(sceneToLoad);
